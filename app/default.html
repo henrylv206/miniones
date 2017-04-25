@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>
@@ -9,226 +9,248 @@
 	<link href="../css/9me.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="../js/jquery-1.4.3.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-addInfo.js"></script>
-    <script type="text/javascript">
+<script type="text/javascript">
 		Pretax = "个人因任职或者受雇而取得的工资、薪金、奖金、年终加薪、劳动分红、津贴、补贴以及与任职或者受雇有关的其他所得";
-	    addInfo("Pretax",Pretax);
+	addInfo("Pretax",Pretax);
 		AftertaxDIV = "税后月收入=税前月收入-(个人社保缴费+公积金缴费)-个人所得税";
-	    addInfo("AftertaxDIV",AftertaxDIV);
+	addInfo("AftertaxDIV",AftertaxDIV);
 		Paying = "个人所得税=(应纳税所得-3500)*适用税率-速算扣除数<br />应纳税所得=税前收入-(个人社保缴费+公积金缴费)";
-	    addInfo("Paying",Paying);
+	addInfo("Paying",Paying);
 		ContBase = "本年度月缴费基数为上年度工资收入总额的月平均数，其中新进员工以职工本人起薪当月的足月工资收入作为缴费基数。社保缴费基数的上限为当地社会平均工资的300%，下限为60%；公积金缴费基数的上限为当地社会平均工资的300%，下限为当地的最低工资。可按实际核定数修改。";
-	    addInfo("ContBase",ContBase);
+	addInfo("ContBase",ContBase);
 		Sfd = "缴费基数上限又称封顶数，是指职工工资收入超过上一年当地在岗职工月平均工资（又称社平工资）300%以上的部份不计入缴费基数";
-	    addInfo("Sfd",Sfd);
+	addInfo("Sfd",Sfd);
 		Taxthreshold = "个税起征点又称扣除标准。现行个税方案采用7级税率，个税起征点为3500元。外籍人士的减除标准为4800元。现行个税方案于2011年9月1日起正式实施。计算结果仅供参考。";
-	    addInfo("Taxthreshold",Taxthreshold);
+	addInfo("Taxthreshold",Taxthreshold);
 		mzsm = "小黄人计算器的各种信息系通过网络收集整理。小黄人计算器会尽量保证信息的准确与及时更新，但由于个人所得税计算涉及多种法律法规及实施办法，各个地区及各个单位均可在法律范围内（或法律范围之外）进行各种调整，因此，通过小黄人计算器计算的结果仅供参考，不可作为合同、劳动争议、仲裁等的依据；小黄人博客所列各种与个人所得税相关的法规、条例、办法、知识等，均应以国家正式文件为准。如有任何疑问，请咨询相关人事部门、当地劳动及社会保障机构、税务机构等权威部门。";
-	    addInfo("mzsm",mzsm);
+	addInfo("mzsm",mzsm);
 	</script>
 
-    <script src="../js/globalJQuery.js" type="text/javascript"></script>
-    <script src="../js/latest.js" type="text/javascript"></script>
+<script src="../js/globalJQuery.js" type="text/javascript"></script>
+<script src="../js/latest.js" type="text/javascript"></script>
 </head>
 <body>
-    <form method="post" action="default1.aspx?interfaceID=1" id="form1">
+<form method="post" action="" id="form1">
 
-	<script type="text/javascript">
-		var App = {
-		
-			"GetDate": function(clientCallBack) {
-				return Ajax_CallBack('app_default', null, 'GetDate', [], clientCallBack, false, false, false, false,'/app/basedata.json');
-			},
+		<script type="text/javascript">
+			var App = {
 			
-			"ChangeThisCity": function(cityName, clientCallBack) {
-				return Ajax_CallBack('app_default', null, 'ChangeThisCity', [cityName], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
-			},
+				"GetDate": function(clientCallBack) {
+					return Ajax_CallBack('app_default', null, 'GetDate', [], clientCallBack, false, false, false, false,'/app/basedata.json');
+				},
+				
+				"ChangeThisCity": function(cityName, clientCallBack) {
+					return Ajax_CallBack('app_default', null, 'ChangeThisCity', [cityName], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
+				},
+				
+				"ShowCityDIV": function(cityName, area, clientCallBack) {
+					return Ajax_CallBack('app_default', null, 'ShowCityDIV', [cityName,area], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
+				},
+				
+				"SelCityName": function(cityName, clientCallBack) {
+					return Ajax_CallBack('app_default', null, 'SelCityName', [cityName], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
+				},
+				
+				"DBAppend": function(salary, aftertax, city, clientCallBack) {
+					return Ajax_CallBack('app_default', null, 'DBAppend', [salary,aftertax,city], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
+				},
+				
+				"DBAppendOther": function(salary, aftertax, inquireType, clientCallBack) {
+					return Ajax_CallBack('app_default', null, 'DBAppendOther', [salary,aftertax,inquireType], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
+				}
 			
-			"ShowCityDIV": function(cityName, area, clientCallBack) {
-				return Ajax_CallBack('app_default', null, 'ShowCityDIV', [cityName,area], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
-			},
-			
-			"SelCityName": function(cityName, clientCallBack) {
-				return Ajax_CallBack('app_default', null, 'SelCityName', [cityName], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
-			},
-			
-			"DBAppend": function(salary, aftertax, city, clientCallBack) {
-				return Ajax_CallBack('app_default', null, 'DBAppend', [salary,aftertax,city], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
-			},
-			
-			"DBAppendOther": function(salary, aftertax, inquireType, clientCallBack) {
-				return Ajax_CallBack('app_default', null, 'DBAppendOther', [salary,aftertax,inquireType], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
-			}
-		
-		};
-	</script>
+			};
+		</script>
 
-    <div id="mengban" style="display: none;"></div> 
-    <div id="MBContent" class="divMengban" style="display: none;"></div>    
-    <iframe id="DivShim" src="" scrolling="no" frameborder="0" style="display: none;"></iframe>
+	<div id="mengban" style="display: none;"></div> 
+	<div id="MBContent" class="divMengban" style="display: none;"></div>
+	<iframe id="DivShim" src="" scrolling="no" frameborder="0" style="display: none;"></iframe>
 	 
-   <div id="info_div" style="display: none; left: 49px; top: 208px;"></div>
-   <div id="main-body">
-		   <div class="head_select">
-			  <div class="f-l w110">收入类型：</div>
-			  <div class="f-l w200"><select class="selectclass" onchange="changeType();" id="taxType">
-
-									<option value="0" selected="selected">工资薪金所得（月薪）</option>
-									<!-- <option value="14">工资薪金所得（简版，带个税反推）</option>
-									<option value="11">工资薪金所得（年薪）</option>
-									<option value="1">年终奖</option>
-									<option value="12">经济补偿金</option>
-									<option value="13">——————————</option>
-									<option value="2">劳务报酬所得</option>
-									<option value="3">稿酬所得</option>
-									<option value="4">特许权使用费所得</option>
-									<option value="5">财产租赁所得</option>
-									<option value="6">财产转让所得</option>
-									<option value="7">利息、股息、红利所得</option>
-                                    <option value="8">个体工商户的生产、经营所得</option>
-									<option value="9">对企事业单位的承包、承租经营所得</option>
-									<option value="10">偶然所得</option> -->
-									</select>
+		<div id="info_div" style="display: none; left: 49px; top: 208px;"></div>
+		<div id="main-body">
+			<div class="head_select">
+				<div class="f-l w110">收入类型：</div>
+				<div class="f-l w200">
+					<select class="selectclass" onchange="changeType();" id="taxType">
+						<option value="0" selected="selected">工资薪金所得（月薪）</option>
+						<!-- <option value="14">工资薪金所得（简版，带个税反推）</option>
+						<option value="11">工资薪金所得（年薪）</option>
+						<option value="1">年终奖</option>
+						<option value="12">经济补偿金</option>
+						<option value="13">——————————</option>
+						<option value="2">劳务报酬所得</option>
+						<option value="3">稿酬所得</option>
+						<option value="4">特许权使用费所得</option>
+						<option value="5">财产租赁所得</option>
+						<option value="6">财产转让所得</option>
+						<option value="7">利息、股息、红利所得</option>
+						<option value="8">个体工商户的生产、经营所得</option>
+						<option value="9">对企事业单位的承包、承租经营所得</option>
+						<option value="10">偶然所得</option> -->
+					</select>
+			 	</div>
+			</div>
+			<!--工资薪金所得（月薪）开始-->
+			<div id="payrollDIV" style="margin:0 auto;"> 
+				<div class="main-bot-top h538">
+					<div class="mbt5_body">
+						<div class="mbt_body_list" style="position:relative;">
+							<div class="f-l w110">选择城市：</div>
+							<div class="f-l w170" id="cityInptDIV">
+								<input name="city" type="text" id="city" onclick="showCityDIV();" readonly="readonly" onkeyup="changPosition(event);" class="w120 inputclass" value="请选择城市">
+								<input id="cityId" type="hidden" value="0">
+								<input name="area" type="hidden" id="area" value="0">
+								<input name="otherID" type="hidden" id="otherID" value="43">
+						 	</div>
+							<div class="com_body" style="display: none;" id="cityDIV"></div> 
+						</div>
+					 
+						<div class="mbt_body_list">
+							<div id="Pretax" class="list_l" onmouseover="this.className='list_la'" onmouseout="this.className='list_l'">税前月收入：</div>
+							<div class="f-l w170"><input onkeyup="salaryKeydown(event);" onblur="chkfloat($(this)[0]);" id="salary" type="text" class="w120 inputclass"> 元</div> 
+							<div onmouseout="this.className='fast_button'" onmouseover="this.className='fast_button_over'" class="fast_button">
+								<div class="fast_button-font" onclick="calculateTax();">计算</div>
+						 	</div>
+						</div>
+					 
+						<div class="mbt_body_list">
+							<div id="AftertaxDIV" class="list_l" onmouseover="this.className='list_la'" onmouseout="this.className='list_l'">税后月收入：</div>
+							<div class="f-l w170"><input type="text" onkeyup="aftertaxKeydown(event);" onblur="chkfloat($(this)[0]);" id="aftertax" class="w120 inputclass"> 元</div> 
+							<div onmouseout="this.className='fast_button'" onmouseover="this.className='fast_button_over'" class="fast_button">
+								<div class="fast_button-font" onclick="calculateAftertax1();">反推</div>
+							</div>
+						</div>
+					 
+						<div class="mbt_body_list">
+							<div id="Paying" class="list_l" onmouseover="this.className='list_la'" onmouseout="this.className='list_l'">缴纳个税：</div>
+							<div class="f-l w170"><input type="text" id="tax" class="w120 not_o nota" disabled="disabled"> 元</div> 
+							<div onmouseout="this.className='fast_button'" onmouseover="this.className='fast_button_over'" class="fast_button">
+								<div class="fast_button-font" onclick="salaryReset();">重置</div>
+							</div>
+						</div>
+					 </div>
+					 <div class="clear"></div>
+					<div class="statement">
+					 	<span class="red">计算结果仅供参考</span><a href="javascript:void(0)" target="_blank" id="mzsm">免责声明</a>
+					</div>
+					 
+					<hr class="h_b">
+					 
+					<div class="main-bot-head">社保与公积金缴费明细<span>(可调整参数)</span></div>
+					<div class="main-bot-center">
+						<div class="mbc_body">
+							<div class="w186">
+								<div class="w95 f-l">个人缴费合计：</div>
+								<div class="w90 f-l" id="personalTotal"></div>
+							</div>
+							<div class="w186">
+								<div class="w95 f-l">应纳税额总计：</div>
+								<div class="w90 f-l" id="pretaxTotal"></div>
+							</div>
+							<div class="w186">
+								<div class="w110 f-l">
+									养老　 <input type="text" id="pension" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：
+								</div>
+								<div class="w75 f-l" id="pensionSpan"></div>			
+							</div>
+							<div class="w186">
+								<div class="w110 f-l">
+									医疗　 <input type="text" id="medicare" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：
+								</div>
+								<div class="w75 f-l" id="medicareSpan"></div>			
+							</div>
+							<div class="w186">
+								<div class="w110 f-l">
+									失业　 <input type="text" id="unemploymentInsurance" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：
+								</div>
+								<div class="w75 f-l" id="unemploymentInsuranceSpan"></div>			
+							</div>
+							<div class="w186">
+								<div class="w110 f-l mgt50">
+									公积金 <input type="text" id="fund" onkeyup="fundDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：
+								</div>
+								<div class="w75 f-l mgt50" id="fundSpan"></div>			
+							</div>
+						</div>
+					 
+					<div class="mbc_body_r">
+						<div class="w185">
+							<div class="w95 f-l">单位缴费合计：</div>
+							<div class="w89 f-l" id="firmTotal"></div>
+						</div>
+						<div class="w185">
+							<div class="w95 f-l">单位支出总计：</div>
+							<div class="w89 f-l" id="firmExpenseTotal"></div>
+						</div>
+						<div class="w185">
+							<div class="w110 f-l">
+								养老　 <input type="text" id="pensionFirm" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：
+							</div>
+							<div class="w74 f-l" id="pensionFirmSpan"></div>			
+						</div>
+						<div class="w185">
+							<div class="w110 f-l">
+								医疗　 <input type="text" id="medicareFirm" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：
+							</div>
+							<div class="w74 f-l" id="medicareFirmSpan"></div>			
+						</div>
+						<div class="w185">
+							<div class="w110 f-l">
+								失业　 <input type="text" id="unemploymentInsuranceFirm" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：
+							</div>
+							<div class="w74 f-l" id="unemploymentInsuranceFirmSpan"></div>			
+						</div>
+						<div class="w185">
+							<div class="w110 f-l">
+								工伤　 <input type="text" id="industrialInjuryFirm" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：
+							</div>
+							<div class="w74 f-l" id="industrialInjuryFirmSpan"></div>			
+						</div>
+						<div class="w185">
+							<div class="w110 f-l">
+								生育　 <input type="text" id="maternityInsuranceFirm" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：
+							</div>
+							<div class="w74 f-l" id="maternityInsuranceFirmSpan"></div>			
+						</div>
+						<div class="w185">
+							<div class="w110 f-l">
+								公积金 <input type="text" id="fundFirm" onkeyup="fundFirmDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：
+							</div>
+							<div class="w74 f-l" id="fundFirmSpan"></div>			
+						</div>
+					</div> 
+					</div>
+					 
+					<hr class="h_b">
+					 
+					<div class="main-bot-bot">
+						<div class="mbb_body">
+							<div id="ContBase" class="mbb_js">缴费基数：</div>
+							<div class="mbb_sb" onmouseover="this.className='mbb_sba'" onmouseout="this.className='mbb_sb'">
+								社保<input id="insuranceBase" onkeyup="insuranceBaseKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" type="text" class="w_input inputclass">
+							</div>
+							<div class="mbb_gj" onmouseover="this.className='mbb_gja'" onmouseout="this.className='mbb_gj'">
+								公积金<input type="text" id="fundBase" onkeyup="fundBaseKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w_input inputclass">
+							</div>
+							<div id="Sfd" class="mbb_fd" onmouseover="this.className='mbb_fda'" onmouseout="this.className='mbb_fd'">
+								封顶数<input id="insuranceMax" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkInt($(this)[0]);" type="text" class="w_input inputclass">
+							</div>
+						</div>
+						<div class="mbb_body">
+							<div id="Taxthreshold" class="mbb_l" onmouseover="this.className='mbb_la'" onmouseout="this.className='mbb_l'">
+								个税起征点：　<input id="threshold" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" type="text" class="w60 not_o" value="3500">
+							</div>
+							<div class="mbb_l">
+								<input type="radio" id="domestic" name="nationality" class="Chackbox" onclick="salaryDetailClick();" checked="checked" align="absmiddle">国内　
+								<input name="nationality" id="overseas" onclick="salaryDetailClick();" type="radio" class="Chackbox" align="absmiddle">外籍
+							</div>
+						</div>
+					 </div>
+				 </div>
 			 </div>
-		  </div>
-		  <!--工资薪金所得（月薪）开始-->
-		   <div id="payrollDIV" style="margin:0 auto;"> 
-			   <div class="main-bot-top h538">
-				 <div class="mbt5_body">
-	 
-				   <div class="mbt_body_list" style="position:relative;">
-					 <div class="f-l w110">选择城市：</div>
-					 <div class="f-l w170" id="cityInptDIV">
-						<input name="city" type="text" id="city" onclick="showCityDIV();" readonly="readonly" onkeyup="changPosition(event);" class="w120 inputclass" value="请选择城市">
-						<input id="cityId" type="hidden" value="1">
-						<input name="area" type="hidden" id="area" value="0">
-						<input name="otherID" type="hidden" id="otherID" value="43">
-					 </div>
-					 <div class="com_body" style="display: none;" id="cityDIV"><div style="display: block;" class="com_hotresults" onkeyup="changPosition(event);"><div style="width: 100%;"><div class="ac_title"><span>可用箭头键<span style="font-family: simsun;">&nbsp;←↑↓→&nbsp;</span>选择</span><a class="ac_close" href="#?" method="close" title="关闭"></a></div><ul class="AbcSearch clx"><li class="action">热门</li><li onclick="changeArea('1');" onmouseover="this.className='ac_over'" onmouseout="this.className=''">A-D</li><li onclick="changeArea('2');" onmouseover="this.className='ac_over'" onmouseout="this.className=''">E-J</li><li onclick="changeArea('3');" onmouseover="this.className='ac_over'" onmouseout="this.className=''">K-N</li><li onclick="changeArea('4');" onmouseover="this.className='ac_over'" onmouseout="this.className=''">O-W</li><li onclick="changeArea('5');" onmouseover="this.className='ac_over'" onmouseout="this.className=''">X-Z</li><li onclick="changeArea('6');" onmouseover="this.className='ac_over'" onmouseout="this.className=''">其它</li><div style="clear:both"></div></ul><div style="clear:both"></div><ul style="overflow: auto; max-height: 260px;"><li class="ac_odd" id="0_0" onclick="setCity('0','1','北京');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">北京</li><li class="ac_odd" id="0_1" onclick="setCity('0','2','上海');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">上海</li><li class="ac_odd" id="0_2" onclick="setCity('0','3','广州');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">广州</li><li class="ac_odd" id="0_3" onclick="setCity('0','12','深圳');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">深圳</li><li class="ac_odd" id="0_4" onclick="setCity('0','9','杭州');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">杭州</li><li class="ac_odd" id="0_5" onclick="setCity('0','8','苏州');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">苏州</li><li class="ac_odd" id="0_6" onclick="setCity('0','10','宁波');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">宁波</li><li class="ac_odd" id="0_7" onclick="setCity('0','6','南京');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">南京</li><li class="ac_odd" id="0_8" onclick="setCity('0','29','厦门');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">厦门</li><li class="ac_odd" id="0_9" onclick="setCity('0','42','珠海');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">珠海</li><li class="ac_odd" id="0_10" onclick="setCity('0','39','武汉');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">武汉</li><li class="ac_odd" id="0_11" onclick="setCity('0','13','成都');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">成都</li><li class="ac_odd" id="0_12" onclick="setCity('0','5','重庆');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">重庆</li><li class="ac_odd" id="0_13" onclick="setCity('0','30','西安');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">西安</li><li class="ac_odd" id="0_14" onclick="setCity('0','25','昆明');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">昆明</li><li class="ac_odd" id="0_15" onclick="setCity('0','34','青岛');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">青岛</li><li class="ac_odd" id="0_16" onclick="setCity('0','24','沈阳');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">沈阳</li><li class="ac_odd" id="0_17" onclick="setCity('0','4','天津');" onmouseover="this.className='ac_odd ac_over'" onmouseout="this.className='ac_odd'">天津</li></ul><input id="cityCount" type="hidden" value="18"></div><div class="clear"></div></div></div>   
-				   </div>
-				   
-				   <div class="mbt_body_list">
-					 <div id="Pretax" class="list_l" onmouseover="this.className='list_la'" onmouseout="this.className='list_l'">税前月收入：</div>
-					 <div class="f-l w170"><input onkeyup="salaryKeydown(event);" onblur="chkfloat($(this)[0]);" id="salary" type="text" class="w120 inputclass"> 元</div> 
-					 <div onmouseout="this.className='fast_button'" onmouseover="this.className='fast_button_over'" class="fast_button">
-						<div class="fast_button-font" onclick="calculateTax();">计算</div>
-					 </div>
-				   </div>
-				   
-				   <div class="mbt_body_list">
-					 <div id="AftertaxDIV" class="list_l" onmouseover="this.className='list_la'" onmouseout="this.className='list_l'">税后月收入：</div>
-					 <div class="f-l w170"><input type="text" onkeyup="aftertaxKeydown(event);" onblur="chkfloat($(this)[0]);" id="aftertax" class="w120 inputclass"> 元</div> 
-					 <div onmouseout="this.className='fast_button'" onmouseover="this.className='fast_button_over'" class="fast_button">
-						<div class="fast_button-font" onclick="calculateAftertax1();">反推</div>
-					 </div>
-				   </div>
-				   
-				   <div class="mbt_body_list">
-					 <div id="Paying" class="list_l" onmouseover="this.className='list_la'" onmouseout="this.className='list_l'">缴纳个税：</div>
-					 <div class="f-l w170"><input type="text" id="tax" class="w120 not_o nota" disabled="disabled"> 元</div> 
-					 <div onmouseout="this.className='fast_button'" onmouseover="this.className='fast_button_over'" class="fast_button">
-						<div class="fast_button-font" onclick="salaryReset();">重置</div>
-					 </div>
-				   </div>
-				 </div>
-				 <div class="clear"></div>
-				 <div class="statement"><span class="red">计算结果仅供参考</span>  <a href="javascript:void(0)" target="_blank" id="mzsm">免责声明</a></div>
-				 
-				 <hr class="h_b">
-				 
-				 <div class="main-bot-head">社保与公积金缴费明细<span>(可调整参数)</span></div>
-				 <div class="main-bot-center">
-				   <div class="mbc_body">
-					  <div class="w186">
-						  <div class="w95 f-l">个人缴费合计：</div>
-						  <div class="w90 f-l" id="personalTotal"></div>
-					  </div>
-					  <div class="w186">
-						  <div class="w95 f-l">应纳税额总计：</div>
-						  <div class="w90 f-l" id="pretaxTotal"></div>
-					  </div>
-					  <div class="w186">
-						<div class="w110 f-l">养老　 <input type="text" id="pension" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：</div>
-						<div class="w75 f-l" id="pensionSpan"></div>			  
-					  </div>
-					  <div class="w186">
-						<div class="w110 f-l">医疗　 <input type="text" id="medicare" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：</div>
-						<div class="w75 f-l" id="medicareSpan"></div>			  
-					  </div>
-					  <div class="w186">
-						<div class="w110 f-l">失业　 <input type="text" id="unemploymentInsurance" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：</div>
-						<div class="w75 f-l" id="unemploymentInsuranceSpan"></div>			  
-					  </div>
-					  <div class="w186">
-						<div class="w110 f-l mgt50">公积金 <input type="text" id="fund" onkeyup="fundDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：</div>
-						<div class="w75 f-l mgt50" id="fundSpan"></div>			  
-					  </div>
-					
-				   </div>
-				   
-				 <div class="mbc_body_r">
-					  <div class="w185">
-						<div class="w95 f-l">单位缴费合计：</div>
-						<div class="w89 f-l" id="firmTotal"></div>
-					  </div>
-					  <div class="w185">
-						<div class="w95 f-l">单位支出总计：</div>
-						<div class="w89 f-l" id="firmExpenseTotal"></div>
-					  </div>
-					  <div class="w185">
-						<div class="w110 f-l">养老　 <input type="text" id="pensionFirm" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：</div>
-						<div class="w74 f-l" id="pensionFirmSpan"></div>			  
-					  </div>
-					  <div class="w185">
-						<div class="w110 f-l">医疗　 <input type="text" id="medicareFirm" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：</div>
-						<div class="w74 f-l" id="medicareFirmSpan"></div>			  
-					  </div>
-					  <div class="w185">
-						<div class="w110 f-l">失业　 <input type="text" id="unemploymentInsuranceFirm" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：</div>
-						<div class="w74 f-l" id="unemploymentInsuranceFirmSpan"></div>			  
-					  </div>
-					  <div class="w185">
-						<div class="w110 f-l">工伤　 <input type="text" id="industrialInjuryFirm" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：</div>
-						<div class="w74 f-l" id="industrialInjuryFirmSpan"></div>			  
-					  </div>
-					  <div class="w185">
-						<div class="w110 f-l">生育　 <input type="text" id="maternityInsuranceFirm" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：</div>
-						<div class="w74 f-l" id="maternityInsuranceFirmSpan"></div>			  
-					  </div>
-					  <div class="w185">
-						<div class="w110 f-l">公积金 <input type="text" id="fundFirm" onkeyup="fundFirmDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w30 inputclass">%：</div>
-						<div class="w74 f-l" id="fundFirmSpan"></div>			  
-					  </div>
-				   </div> 
-				 </div>
-				 
-				 <hr class="h_b">
-				 
-				 <div class="main-bot-bot">
-				    <div class="mbb_body">
-					   <div id="ContBase" class="mbb_js">缴费基数：</div>
-					   <div class="mbb_sb" onmouseover="this.className='mbb_sba'" onmouseout="this.className='mbb_sb'">社保<input id="insuranceBase" onkeyup="insuranceBaseKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" type="text" class="w_input inputclass"></div>
-					   <div class="mbb_gj" onmouseover="this.className='mbb_gja'" onmouseout="this.className='mbb_gj'">公积金<input type="text" id="fundBase" onkeyup="fundBaseKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" class="w_input inputclass"></div>
-					   <div id="Sfd" class="mbb_fd" onmouseover="this.className='mbb_fda'" onmouseout="this.className='mbb_fd'">封顶数<input id="insuranceMax" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkInt($(this)[0]);" type="text" class="w_input inputclass"></div>
-					</div>
-					<div class="mbb_body">
-					  <div id="Taxthreshold" class="mbb_l" onmouseover="this.className='mbb_la'" onmouseout="this.className='mbb_l'">个税起征点：　<input id="threshold" onkeyup="salaryDetailKeyup($(this)[0]);" onblur="chkfloat($(this)[0]);" type="text" class="w60 not_o" value="3500"></div>
-					  <div class="mbb_l"><input type="radio" id="domestic" name="nationality" class="Chackbox" onclick="salaryDetailClick();" checked="checked" align="absmiddle">国内　<input name="nationality" id="overseas" onclick="salaryDetailClick();" type="radio" class="Chackbox" align="absmiddle">外籍</div>
-					</div>
-
-					
-					
-				 </div>
-				 
-			   </div>
-
-
-		   </div>
-		  <!--工资薪金所得（月薪）结束-->
-		   
-  </div>
-  
-  <script type="text/javascript">getDate();</script>
-    </form>
-
-
-</body></html>
+		<!--工资薪金所得（月薪）结束-->
+		</div>
+		<script type="text/javascript">getDate();</script>
+	</form>
+</body>
+</html>

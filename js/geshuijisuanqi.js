@@ -39,18 +39,25 @@ function cancelKey(evt) {
  * 
  */
 function taxTypeChange() {
+	alert("收入类型改变");
 	taxType = $("#taxType").val();
 }
 
 // 城市选择
 function cityChange() {
+	alert("城市改变");
 	city = $("#city").val();
 }
 
 // 计算个人所得税
 function btnCalc_onClick_index()
 {
+	// alert("开始计算个人所得税");
+	// 清空结果
     clearResult_index();
+    
+    // alert("1111");
+    // 税前收入处理
     var income = parseFloat($("#txtIncome").val());
     if(isNaN(income)) {
         alert("无效的收入金额");
@@ -60,7 +67,9 @@ function btnCalc_onClick_index()
     }
     $("#txtIncome").val(income); 
     
-    var insure = parseFloat($("#txtInsure").val());
+    // 保险费用处理
+    // var insure = parseFloat($("#txtInsure").val());
+    var insure = 2388;
     if(isNaN(insure)) {
         alert("无效的各项社会保险费金额");
         $("#txtInsure")[0].focus();
@@ -68,7 +77,10 @@ function btnCalc_onClick_index()
         return;
     }
     $("#txtInsure").val(insure);   
-    var baseLine=$("#selBaseLine").val();
+    
+    // 税收起征点处理
+    //var baseLine=$("#selBaseLine").val();
+    var baseLine=3500
     
     var taxableIncome = income - insure - baseLine;
     if(taxableIncome <=0){
@@ -78,6 +90,8 @@ function btnCalc_onClick_index()
         return; 
     }
     
+    // 开始计算
+    //alert("开始计算")
     var R,Q;
     var A=taxableIncome;
     A=A.toFixed(2);
@@ -90,9 +104,9 @@ function btnCalc_onClick_index()
     else{R=0.45;Q=13505;} 
     var tax=taxableIncome * R -Q;
     var realIncome=income - insure - tax;            
-    $("#lblTaxableIncome")[0].innerText=taxableIncome.toFixed(2);
-    $("#lblTaxRate")[0].innerText=R*100;
-    $("#lblQuick")[0].innerText=Q;
+    //$("#lblTaxableIncome")[0].innerText=taxableIncome.toFixed(2);
+    //$("#lblTaxRate")[0].innerText=R*100;
+    //$("#lblQuick")[0].innerText=Q;
     $("#txtTax")[0].value=tax.toFixed(2);
     $("#txtRealIncome")[0].value=realIncome.toFixed(2);
     $("#txtIncome")[0].select();
@@ -116,11 +130,12 @@ function btnReset_onClick_index()
 // 清空计算结果
 function clearResult_index()
 {
-    $("#lblTaxableIncome")[0].innerText="0";
-    $("#lblTaxRate")[0].innerText="0";
-    $("#lblQuick")[0].innerText="0";
-    $("#txtTax")[0].value="";
-    $("#txtRealIncome")[0].value="";
+//	alert("清空计算结果");
+//    $("#lblTaxableIncome")[0].innerText="0";
+//    $("#lblTaxRate")[0].innerText="0";
+//    $("#lblQuick")[0].innerText="0";
+//    $("#txtTax")[0].value="";
+//    $("#txtRealIncome")[0].value="";
 }
 
 

@@ -40,23 +40,23 @@
 				},
 				
 				"ChangeThisCity": function(cityName, clientCallBack) {
-					return Ajax_CallBack('app_default', null, 'ChangeThisCity', [cityName], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
+					return Ajax_CallBack('app_default', null, 'ChangeThisCity', [cityName], clientCallBack, false, false, false, false,'/app/restapi?interfaceID=1&Ajax_CallBack=true');
 				},
 				
 				"ShowCityDIV": function(cityName, area, clientCallBack) {
-					return Ajax_CallBack('app_default', null, 'ShowCityDIV', [cityName,area], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
+					return Ajax_CallBack('app_default', null, 'ShowCityDIV', [cityName,area], clientCallBack, false, false, false, false,'/app/restapi?interfaceID=1&Ajax_CallBack=true');
 				},
 				
 				"SelCityName": function(cityName, clientCallBack) {
-					return Ajax_CallBack('app_default', null, 'SelCityName', [cityName], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
+					return Ajax_CallBack('app_default', null, 'SelCityName', [cityName], clientCallBack, false, false, false, false,'/app/restapi?interfaceID=1&Ajax_CallBack=true');
 				},
 				
 				"DBAppend": function(salary, aftertax, city, clientCallBack) {
-					return Ajax_CallBack('app_default', null, 'DBAppend', [salary,aftertax,city], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
+					return Ajax_CallBack('app_default', null, 'DBAppend', [salary,aftertax,city], clientCallBack, false, false, false, false,'/app/restapi?interfaceID=1&Ajax_CallBack=true');
 				},
 				
 				"DBAppendOther": function(salary, aftertax, inquireType, clientCallBack) {
-					return Ajax_CallBack('app_default', null, 'DBAppendOther', [salary,aftertax,inquireType], clientCallBack, false, false, false, false,'/app/default1.aspx?interfaceID=1&Ajax_CallBack=true');
+					return Ajax_CallBack('app_default', null, 'DBAppendOther', [salary,aftertax,inquireType], clientCallBack, false, false, false, false,'/app/restapi?interfaceID=1&Ajax_CallBack=true');
 				}
 			
 			};

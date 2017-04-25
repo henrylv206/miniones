@@ -475,7 +475,7 @@ function changeArrayInsurance(a) {
 }
 function calculateTax() {
     payrollType = 1;
-    saveDB = 1;
+    //saveDB = 1;
     chkfloat($("#salary")[0]);
     if (jQuery.trim($("#city").val()) != "") {
         if (jQuery.trim($("#salary").val()) != "") {

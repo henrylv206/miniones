@@ -148,10 +148,10 @@ function showCitiesDIV(a, b, c) {
     var d = new StringBuilder;
     d.append('<div style="display: block;" class="com_hotresults" onkeyup="changPosition(event);">');
     d.append('<div style="width: 100%;">');
-    d.append('<div class="ac_title">');
-    d.append('<span>可用箭头键<span style="font-family: simsun;"> ←↑↓→ </span>选择</span>');
-    d.append('<a class="ac_close" href="#?" method="close" title="关闭"></a>');
-    d.append("</div>");
+//    d.append('<div class="ac_title">');
+//    d.append('<span>可用箭头键<span style="font-family: simsun;"> ←↑↓→ </span>选择</span>');
+//    d.append('<a class="ac_close" href="#?" method="close" title="关闭"></a>');
+//    d.append("</div>");
     d.append('<ul class="AbcSearch clx" >');
     if (b == "" || b == "其它" || a == 0) {
         a = 0;

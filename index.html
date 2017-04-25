@@ -3,303 +3,64 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-	<title>个税计算器2017 - 个人所得税计算器2017</title>
-	<meta name="description" content="2017年最新个人所得税计算器，采用2017年最新个税税率表，提供工资、税后工资、年终奖、劳务报酬等个税计算方法，2017年最好用的个税计算器,个税管理专家。">
-	<meta name="keywords" content="个人所得税计算器,个人所得税计算器2017,个税计算器,个税计算器2017,个人所得税">
-	<link rel="shortcut icon" href="./img/favicon.ico">
-	<link href="./css/style.css" rel="stylesheet">
-	<link href="./css/jsq_style.css" rel="stylesheet">
+	<meta name="keywords" content="个人所得税计算器,2017年最新,个税计算器,3500元起征点,7级税率,9米,九米,个人所得税计算方法,个人所得税税率表,个税计算方法,个税税率表,个税,起征点,个税计算,计算个人所得税,已知税后,反推,反查,反算,税前,税后,工资计
+	算器,社保计算器,四金计算器,六金计算器,收入计算器,扣税计算器,缴税计算器,年薪计算器,经济补偿金计算器,年终奖计算器,双薪计算器,缴税,扣税,社保比例,社保基数,缴费基数, 缴费比例,社平工资,封顶数,公积金,三险一金,五险一金,四金,六金,晒工资,年薪,薪金
+	,薪资,薪水,到手工资,工薪所得,工资薪金所得,双薪,13薪,经济补偿金,外企,外籍,白领,工薪阶层,北京上海广州深圳成都杭州天津南京武汉沈阳苏州西安青岛重庆">
+	<meta name="description" content="9米计算器是好用的个人所得税计算器，一键计算，带反推、四金明细，支持年终奖、年薪制、经济补偿金扣税缴税计算">
+	<link rel="shortcut icon" href="./images/favicon.ico">
+	<title>
+		个人所得税计算器—9米计算器：2017年最新个税计算器。一键计算，带反推、四金明细、年终奖、年薪制
+	</title>
+	<link type="text/css" rel="stylesheet" href="./css/style1.css">
+	<link type="text/css" rel="stylesheet" href="./css/fix-ie.css">
 </head>
-<body>
-	<div id="header" class="clearfix">
-	</div>
-	<div id="menu" class="clearfix">
-	</div>
-	
-	<div id="bodier">
-		<div class="wraper-s">
-			<div class="mainContent row">
-				<div class="calculator-content col8">
-					<div class="calculator box">
-						<h1 class="h4 mainTitle">个人所得税计算器2017</h1>
-						<table class="table">
-							<tbody>
-								<tr>
-	                                <td class="label">
-	                                    收入类型
-	                                </td>
-	                                <td>
-	                                    <select class="selectclass" id="taxType" onchange="taxTypeChange()">
-	                                        <option value="sqgz" selected="selected">工资、薪金所得（月薪）</option>
-	                                        <option value="shgz">工资、薪金所得（月薪 税后）</option>
-	                                        <option value="nzj">年终奖所得</option>
-	                                        <!-- <option value="index_shgz.html">工资、薪金所得（月薪 税后）</option>
-	                                        <option value="index_nzj.html">年终奖所得</option>
-	                                        <option value="index_lwbc.html">劳务报酬所得</option>
-	                                        <option value="index_gtgsh.html">个体工商户生产、经营所得</option>
-	                                        <option value="index_cbcz.html">对企事业单位的承包、承租经营所得</option>
-	                                        <option value="index_gcsd.html">稿酬所得</option>
-	                                        <option value="index_txq.html">特许权使用费所得</option>
-	                                        <option value="index_cczl.html">财产租赁所得</option>
-	                                        <option value="index_cczr.html">财产转让所得</option>
-	                                        <option value="index_lxhl.html">利息、股息、红利所得</option>
-	                                        <option value="index_orsd.html">偶然所得</option> -->
-	                                    </select>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    城市
-	                                </td>
-	                                <td>
-	                                    <select class="selectclass" id="city" onchange="cityChange()">
-	                                        <option value="beijing" selected="selected">北京</option>
-	                                        <option value="shanghai">上海</option>
-	                                        <option value="guangzhou">广州</option>
-	                                        <option value="shenzhen">深圳</option>
-	                                        <option value="xian">西安</option>
-	                                        <option value="zhengzhou">郑州</option>
-	                                    </select>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    税前工资
-	                                </td>
-	                                <td>
-	                                    <input id="txtIncome" class="ipt-txt" name="" type="text" value="" onkeydown="keyControl(event,this)"><span class="unit">元</span>
-	                                </td>
-	                            </tr>
-	                            <!-- <tr>
-	                                <td class="label">
-	                                    税后工资
-	                                </td>
-	                                <td>
-	                                    <input id="txtIncome" class="ipt-txt" name="" type="text" value="" onkeydown="keyControl(event,this)"><span class="unit">元</span>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    社保基数
-	                                </td>
-	                                <td>
-	                                    <input id="txtInsure" class="ipt-txt" name="" type="text" value="0" onkeydown="keyControl(event,this)"><span class="unit">元</span>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    公积金基数
-	                                </td>
-	                                <td>
-	                                    <input id="txtInsure" class="ipt-txt" name="" type="text" value="0" onkeydown="keyControl(event,this)"><span class="unit">元</span>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    起征点
-	                                </td>
-	                                <td>
-	                                    <select class="selectclass" id="selBaseLine">
-	                                        <option value="3500" selected="selected">3500 </option>
-	                                        <option value="4800">4800 </option>
-	                                    </select><span class="unit">元</span>
-	                                </td>
-	                            </tr> -->
-	                            <tr>
-	                                <td class="label">
-	                                </td>
-	                                <td>
-	                                    <div class="submitLine clearfix">
-	                                        <a class="btn" id="btnCalc" href="javascript:;" onclick="btnCalc_onClick_index()">计算</a>
-	                                        <a class="rst" href="javascript:;" target="_self" id="rst" onclick="btnReset_onClick_index()">重置</a>
-	                                    </div>
-	                                </td>
-	                            </tr>
-                        	</tbody>
-                        </table>
-	
-                        <div class="divider"></div>
-	                        
-                        <h3 class="h3 subTitle">计算结果</h3>
-                        <table class="table">
-                            <tbody>
-                            	<tr>
-	                                <td class="label">
-	                                    实发工资
-	                                </td>
-	                                <td>
-	                                    <input id="txtRealIncome" class="ipt-txt disabled" type="text" readonly="readonly">
-	                                </td>
-	                                
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    应缴税款
-	                                </td>
-	                                <td>
-	                                    <input id="txtTax" class="ipt-txt disabled" type="text" readonly="readonly">
-	                                </td>
-	                                <td><span class="unit">元</span></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    缴纳项目
-	                                </td>
-	                                <td>
-	                                    个人缴纳
-	                                </td>
-	                                <td class="label">
-	                                    单位缴纳
-	                                </td>
-	                                <td class="label">
-	                                    单位（元）
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    养老
-	                                </td>
-	                                <td>
-	                                  <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td><span class="unit">%</span></td>
-	                                <td class="label">
-	                                    <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td class="label">
-	                                	<span class="unit">%</span>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    医疗
-	                                </td>
-	                                <td>
-	                                  <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td><span class="unit">%</span></td>
-	                                <td class="label">
-	                                    <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td class="label">
-	                                	<span class="unit">%</span>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    失业
-	                                </td>
-	                                <td>
-	                                  <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td><span class="unit">%</span></td>
-	                                <td class="label">
-	                                    <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td class="label">
-	                                	<span class="unit">%</span>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    工伤
-	                                </td>
-	                                <td>
-	                                  <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td><span class="unit">%</span></td>
-	                                <td class="label">
-	                                    <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td class="label">
-	                                	<span class="unit">%</span>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    生育
-	                                </td>
-	                                <td>
-	                                  <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td><span class="unit">%</span></td>
-	                                <td class="label">
-	                                    <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td class="label">
-	                                	<span class="unit">%</span>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    公积金
-	                                </td>
-	                                <td>
-	                                  <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td><span class="unit">%</span></td>
-	                                <td class="label">
-	                                    <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td class="label">
-	                                	<span class="unit">%</span>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    工伤
-	                                </td>
-	                                <td>
-	                                  <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td><span class="unit">%</span></td>
-	                                <td class="label">
-	                                    <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td class="label">
-	                                	<span class="unit">%</span>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                    社保基数
-	                                </td>
-	                                <td>
-	                                  <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                                <td class="label">
-	                                    公积金基数
-	                                </td>
-	                                <td class="label">
-	                                    <input id="txtTax" type="text" readonly="readonly">
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td class="label">
-	                                     
-	                                </td>
-	                                <td>
-	                                </td>
-	                            </tr>
-                        	</tbody>
-                        </table>
+<body class="sidebars">
+    <form id="form1" action="" method="post">
+        <div id="page">
+            <div id="header">
+      
+            </div>
+            <!-- /header -->
+            <div id="main">
+                <div class="main-body">
+                    
+                    <div style="clear:both;"></div>
+                    <div class="content-box-holder">
+                        <div id="content-box">
+                            <div class="content-box-area">
+                                <div class="content-product">
+                                    <!--左边开始-->
+                                    <div style="float:left; margin:0px;width:425px;">
+                                        <div class="biaotou">
+                                            <h1>2017版个税计算器</h1>
+                                        </div>
+                                        <div class="left_body">
+                                            <iframe scrolling="no" style="padding-left:5px;" width="394" height="586" frameborder="0" src="./app/default.html"></iframe>
+                                        </div>
+                                        
+                                    </div>
+                                    <!--左边结束-->
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
                     </div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="myf-row clearfix">
-		<div class="myf-row" id="links">
-			<div class="item-title clearfix">
-				
-			</div>
-			<div class="linkbox">
-			
-			</div>
-		</div>
-	</div>
-	
-	<script src="./js/jquery-1.10.1.min.js"></script>
-	<script src="./js/geshuijisuanqi.js"></script>
-</body>
-</html>
+                </div>
+                <!--bottom-->
+                
+            </div>
+            <div id="footer">
+                
+            </div>
+        </div>
+        
+    </form>
+
+
+</body></html>

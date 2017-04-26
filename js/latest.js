@@ -1202,7 +1202,7 @@ function otherCalculateAfter() {
 }
 function calculateAnnualBonus() {
     if (jQuery.trim($("#otherBeforeTax").val()) != "") {
-        App.DBAppendOther(jQuery.trim($("#otherBeforeTax").val()), 0, 1);
+        //App.DBAppendOther(jQuery.trim($("#otherBeforeTax").val()), 0, 1);
         $("#otherTax").val(getShuijiNian(parseFloat(jQuery.trim($("#otherBeforeTax").val()))));
         $("#otherAfterTax").val(parseFloat(jQuery.trim($("#otherBeforeTax").val())) - parseFloat(jQuery.trim($("#otherTax").val())))
     } else {

@@ -73,6 +73,7 @@
 				<div class="f-l w200">
 					<select class="selectclass" onchange="changeType();" id="taxType">
 						<option value="0" selected="selected">工资薪金所得（月薪）</option>
+						<option value="1">年终奖</option>
 						<!-- <option value="14">工资薪金所得（简版，带个税反推）</option>
 						<option value="11">工资薪金所得（年薪）</option>
 						<option value="1">年终奖</option>
@@ -245,10 +246,42 @@
 								<input name="nationality" id="overseas" onclick="salaryDetailClick();" type="radio" class="Chackbox" align="absmiddle">外籍
 							</div>
 						</div>
-					 </div>
-				 </div>
-			 </div>
-		<!--工资薪金所得（月薪）结束-->
+					</div>
+				</div>
+			</div>
+			<!--工资薪金所得（月薪）结束-->
+			<div id="otherDIV" style="margin: 0px auto; display: none;">
+				<div class="main-bot-top h538">
+					<!--年终奖 开始-->	
+					<div class="mbt_body" id="otherRapidDIV" style="display: block;">
+						<div class="mbt_body_list">
+							<div class="f-l FontBold w110">税前收入：</div>
+							<div class="f-l w170">
+								<input type="text" id="otherBeforeTax" onkeydown="chkfloat($(this)[0]);if(event.keyCode==13){otherCalculate();};" onblur="chkfloat($(this)[0]);" class="w120 inputclass"> 元
+							</div>
+							<div class="fast_button" onmouseover="this.className='fast_button_over'" onmouseout="this.className='fast_button'">
+								<div class="fast_button-font" onclick="otherCalculate();">计算</div>
+							</div>
+						</div>
+						<div class="mbt_body_list">
+							<div class="f-l FontBold w110">税后收入：</div>
+							<div class="f-l w170">
+								<input id="otherAfterTax" onkeydown="chkfloat($(this)[0]);if(event.keyCode==13){otherCalculateAfter();};" onblur="chkfloat($(this)[0]);" type="text" disabled="disabled" class="w120 inputclass"> 元
+							</div>
+						</div>
+						<div class="mbt_body_list">
+							<div class="f-l FontBold w110">缴纳个税：</div>
+							<div class="f-l w170">
+								<input id="otherTax" type="text" disabled="disabled" class="w120 not_o nota"> 元
+							</div>
+							<div class="fast_button" onmouseover="this.className='fast_button_over'" onmouseout="this.className='fast_button'">
+								<div class="fast_button-font" onclick="otherRapidReset();">重置</div>
+							</div>
+						</div>
+					</div>
+					<!--年终奖 结束-->	
+				</div>
+		  </div>
 		</div>
 		<script type="text/javascript">getDate();</script>
 	</form>

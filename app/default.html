@@ -9,21 +9,22 @@
 	<link href="../css/9me.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="../js/jquery-1.4.3.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-addInfo.js"></script>
-<script type="text/javascript">
+	<script type="text/javascript">
 		Pretax = "个人因任职或者受雇而取得的工资、薪金、奖金、年终加薪、劳动分红、津贴、补贴以及与任职或者受雇有关的其他所得";
-	addInfo("Pretax",Pretax);
+		addInfo("Pretax",Pretax);
 		AftertaxDIV = "税后月收入=税前月收入-(个人社保缴费+公积金缴费)-个人所得税";
-	addInfo("AftertaxDIV",AftertaxDIV);
+		addInfo("AftertaxDIV",AftertaxDIV);
 		Paying = "个人所得税=(应纳税所得-3500)*适用税率-速算扣除数<br />应纳税所得=税前收入-(个人社保缴费+公积金缴费)";
-	addInfo("Paying",Paying);
+		addInfo("Paying",Paying);
 		ContBase = "本年度月缴费基数为上年度工资收入总额的月平均数，其中新进员工以职工本人起薪当月的足月工资收入作为缴费基数。社保缴费基数的上限为当地社会平均工资的300%，下限为60%；公积金缴费基数的上限为当地社会平均工资的300%，下限为当地的最低工资。可按实际核定数修改。";
-	addInfo("ContBase",ContBase);
+		addInfo("ContBase",ContBase);
 		Sfd = "缴费基数上限又称封顶数，是指职工工资收入超过上一年当地在岗职工月平均工资（又称社平工资）300%以上的部份不计入缴费基数";
-	addInfo("Sfd",Sfd);
+		addInfo("Sfd",Sfd);
 		Taxthreshold = "个税起征点又称扣除标准。现行个税方案采用7级税率，个税起征点为3500元。外籍人士的减除标准为4800元。现行个税方案于2011年9月1日起正式实施。计算结果仅供参考。";
-	addInfo("Taxthreshold",Taxthreshold);
+		addInfo("Taxthreshold",Taxthreshold);
 		mzsm = "小黄人计算器的各种信息系通过网络收集整理。小黄人计算器会尽量保证信息的准确与及时更新，但由于个人所得税计算涉及多种法律法规及实施办法，各个地区及各个单位均可在法律范围内（或法律范围之外）进行各种调整，因此，通过小黄人计算器计算的结果仅供参考，不可作为合同、劳动争议、仲裁等的依据；小黄人博客所列各种与个人所得税相关的法规、条例、办法、知识等，均应以国家正式文件为准。如有任何疑问，请咨询相关人事部门、当地劳动及社会保障机构、税务机构等权威部门。";
-	addInfo("mzsm",mzsm);
+		addInfo("mzsm",mzsm);
+		addInfo("mzsm2", mzsm);
 	</script>
 
 <script src="../js/globalJQuery.js" type="text/javascript"></script>
@@ -130,9 +131,9 @@
 							</div>
 						</div>
 					 </div>
-					 <div class="clear"></div>
+					<div class="clear"></div>
 					<div class="statement">
-					 	<span class="red">计算结果仅供参考</span><a href="javascript:void(0)" target="_blank" id="mzsm">免责声明</a>
+						<span class="red">计算结果仅供参考</span> <a href="javascript:void(0)" target="_blank" id="mzsm">免责声明</a>
 					</div>
 					 
 					<hr class="h_b">
@@ -280,6 +281,9 @@
 						</div>
 					</div>
 					<!--年终奖 结束-->	
+					<div class="statement">
+					 	<span class="red">计算结果仅供参考</span> <a href="javascript:void(0)" target="_blank" id="mzsm2">免责声明</a>
+					</div>
 				</div>
 		  </div>
 		</div>

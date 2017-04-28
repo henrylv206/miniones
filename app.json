@@ -6,16 +6,25 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "小黄人工具平台6",
-    "navigationBarTextStyle":"white"
+    "navigationBarTitleText": "小黄人工具平台",
+    "navigationBarTextStyle":"white",
+    "backgroundColor":"#cccccc",
+    "enablePullDownRefresh":"true"
   },
   "tabBar": {
+    "selectedColor":"#bbbbbb",
+    "position":"bottom",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页"
+      "text": "个税计算器"
     }, {
       "pagePath": "pages/logs/logs",
-      "text": "日志"
+      "text": "访问时间"
     }]
-  }
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
 }

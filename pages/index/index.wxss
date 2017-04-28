@@ -19,3 +19,8 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.inline-block {
+  display: inline-block;
+  background-color:azure;
+}

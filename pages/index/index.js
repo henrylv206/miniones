@@ -1,26 +1,43 @@
 //index.js
 //获取应用实例
 var app = getApp()
+
 Page({
   data: {
-    motto: 'Hello，小黄人工具平台！',
-    userInfo: {}
+    income: null,
+    fee: null,
+    money: null,
+    msg: "请输入税前收入和社保公积金扣费！"
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  bindIncomeInput: function(e) {
+    this.setData({
+      income: e.detail.value
     })
   },
-  onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
+  bindFeeInput: function (e) {
+    this.setData({
+      fee: e.detail.value
+    })
+  },
+  cal: function () {
+    if (this.data.income == null || this.data.fee == null) {
+      this.setData({
+        msg: "输入有误，请正确输入税前收入和社保公积金！",
+        money: this.data.income + this.data.fee
       })
+    } else {
+      this.setData({
+        money: (this.data.income - this.data.fee) * 0.8
+      })
+    }
+  },
+  clear: function () {
+    this.setData({
+      income: null,
+      fee: null,
+      money: null,
+      msg: "请输入税前收入和社保公积金扣费！"
     })
   }
 })

@@ -1,10 +1,21 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view>
+    <view style="width:360px">提示：{{msg}}</view>
+    
+    <view>
+      <label>税前收入：</label><input bindinput="bindIncomeInput" id="income" class="inline-block" type="number" maxlength="10" placeholder="税前收入" value="{{income}}"/>
+    </view>
+    <view>
+      <label>社保公积金：</label><input bindinput="bindFeeInput" id="fee" class="inline-block" type="number" maxlength="10" placeholder="社保公积金扣费"  value="{{fee}}"/>
+    </view>
+    <view>
+      <label>税后收入：</label><input id="money" class="inline-block" type="number" maxlength="10" placeholder="税后收入" value="{{money}}"/>
+    </view>
+    <view>
+      <button bindtap="cal" class="inline-block">计算</button>
+      <button bindtap="clear" class="inline-block">重置</button>
+    </view>
+    
   </view>
 </view>

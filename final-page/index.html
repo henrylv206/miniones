@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./css/css.css"></link>
+ </head>
+ <body>
+  <!--顶部-->
+  <div class="topbar">
+
+   <div class="center"><img src="./images/index_02.jpg" style="display: block;float: left;"/>欢迎来到小黄人个税计算器网！</div>
+
+  </div>
+  <!--清除浮动-->
+  <div class="clear"></div>
+ <!--中间部分，宽度均为1000px-->
+  <div class="center">
+
+  <!--头部-->
+  <div class="header">
+   <div class="header_logo">
+    <a href="#" title="小黄人个税计算器"></a>
+   </div>
+   <div class="header_nav">
+    <ul>
+     <li><a href="#">个人所得税计算器</a></li>
+     <li><a href="#">个人所得税税率表</a></li>
+     <li><a href="#">个人所得税计算方法</a></li>
+     <li><a href="#">个人所得税申报</a></li>
+     <li><a href="#">个人所得税知识</a></li>
+    </ul>
+   </div>
+  </div>
+   <!--清除浮动-->
+   <div class="clear"></div>
+  <!--广告图-->
+  <div class="banner">
+   <!--搜索-->
+   <div class="search">
+    <form>
+     <input name="keyword" type="text" class="search-text">
+     <input type="submit" class="search-button" value=" ">
+    </form>
+    <!--清除浮动-->
+    <div class="clear"></div>
+    <ul class="search-hot-words">
+     <li>tag:<a href="#">个税计算器</a></li>
+     <li><a href="#">个税税率表</a></li>
+     <li><a href="#">个税申报</a></li>
+    </ul>
+   </div>
+  </div>
+   <!--头部结束-->
+  </div>
+
+  <!--中间部分开始-->
+  <div class="all_center">
+  <div class="center">
+
+  <!--个税计算器-->
+  <div class="calculator">
+   <div class="box-hd"><h1>个人所得税计算器</h1></div>
+   <div class="calculator_tax">
+    <!--2017版个税计算器-->
+    <div class="calculator_personal">
+     <h3>2017版个人所得税计算器</h3>
+     <ul>
+      <li><span class="calculator_text">收入类型 ：</span>
+       <form>
+       <select class="selectclass" onchange="changeType();" id="taxType">
+
+        <option value="0" selected="selected">工资薪金所得（月薪）</option>
+        <option value="14">工资薪金所得（简版，带个税反推）</option>
+        <option value="11">工资薪金所得（年薪）</option>
+        <option value="1">年终奖</option>
+        <option value="12">经济补偿金</option>
+        <option value="13">——————————</option>
+        <option value="2">劳务报酬所得</option>
+        <option value="3">稿酬所得</option>
+        <option value="4">特许权使用费所得</option>
+        <option value="5">财产租赁所得</option>
+        <option value="6">财产转让所得</option>
+        <option value="7">利息、股息、红利所得</option>
+        <option value="8">个体工商户的生产、经营所得</option>
+        <option value="9">对企事业单位的承包、承租经营所得</option>
+        <option value="10">偶然所得</option>
+
+       </select>
+      </form>
+      </li>
+      <li><span class="calculator_text">选择城市 ：</span>
+       <form>
+       <input name="city" type="text" id="city" onclick="showCityDIV();" readonly="readonly" onkeyup="changPosition(event);" class="w120 inputclass" value="请选择城市">
+       <input id="cityId" type="hidden" value="0">
+       <input name="area" type="hidden" id="area" value="0">
+       <input name="otherID" type="hidden" id="otherID" value="43">
+       </form>
+      </li>
+      <li><span>税前月收入 ：</span>
+       <form>
+        <input  type="text" class="input_money"> <span id="money">元</span>
+       </form>
+      </li>
+      <li><div class="button_Calculation">计 算</div><div class="button_Calculation">重 置</div><div class="button_Calculation">反 推</div></li>
+      <!--清除浮动-->
+      <div class="clear"></div>
+      <li><span>税前后收入 ：</span>
+       <form>
+       <input type="text"  class="input_money"> <span id="money">元</span>
+       </form>
+      </li>
+      <li><span class="calculator_text">应缴个税 ：</span>
+       <form>
+       <input type="text"  class="input_money"> <span id="money">元</span>
+       </form>
+      </li>
+     </ul>
+     <p>计算结果仅限参考<span><a href="#">免责声明</a></span></p>
+    </div>
+    <!--社保和公积金-->
+    <div class="Social_security">
+     <h3>社保与公积金缴费明细（可调参数）</h3>
+     <!--个人缴费-->
+     <ul class="payment">
+      <li><span>个人缴费合计：</span><div class="input_payment">350000.58</div></li>
+      <li><span>应纳税额合计：</span><div class="input_payment">350.58</div></li>
+      <li><span class="calculator_text">养老</span><form><input  type="text" class="input_percent"> <span id="money">%</span></form>：<div class="input_payment">350.58</div></li>
+      <li><span class="calculator_text">医疗</span><form><input  type="text" class="input_percent"> <span id="money">%</span></form>：<div class="input_payment">350.58</div></li>
+      <li><span class="calculator_text">失业</span><form><input  type="text" class="input_percent"> <span id="money">%</span></form>：<div class="input_payment">350.58</div></li>
+      <li class="fund"><span>公积金</span><form><input  type="text" class="input_percent"> <span id="money">%</span></form>：<div class="input_payment">350.58</div></li>
+     </ul>
+     <!--公司缴费-->
+     <ul class="payment">
+      <li><span>单位缴费合计：</span><div class="input_payment">350.58</div></li>
+      <li><span>单位支出合计：</span><div class="input_payment">350.58</div></li>
+      <li><span class="calculator_text">养老</span><form><input  type="text" class="input_percent"> <span id="money">%</span></form>：<div class="input_payment">350.58</div></li>
+      <li><span class="calculator_text">医疗</span><form><input  type="text" class="input_percent"> <span id="money">%</span></form>：<div class="input_payment">350.58</div></li>
+      <li><span class="calculator_text">失业</span><form><input  type="text" class="input_percent"> <span id="money">%</span></form>：<div class="input_payment">350.58</div></li>
+      <li><span class="calculator_text">工伤</span><form><input  type="text" class="input_percent"> <span id="money">%</span></form>：<div class="input_payment">350.58</div></li>
+      <li><span class="calculator_text">生育</span><form><input  type="text" class="input_percent"> <span id="money">%</span></form>：<div class="input_payment">350.58</div></li>
+      <li><span>公积金</span><form><input  type="text" class="input_percent"> <span id="money">%</span></form>：<div class="input_payment">3500</div></li>
+     </ul>
+     <!--清除浮动-->
+     <div class="clear"></div>
+     <!--缴费基数-->
+     <div class="payment_base">
+     <h4  align="left">缴费基数</h4>
+     <ul>
+      <li><span  class="calculator_text">社保：</span><input  type="text" class="input_base"></li>
+      <li><span  class="payment_text">封顶数：</span><input  type="text" class="input_base"></li>
+      <li><span>国内：</span><input type="radio" id="domestic" name="nationality"  checked="checked" align="absmiddle"></li>
+      <!--清除浮动-->
+      <div class="clear"></div>
+      <li><span>公积金：</span><input  type="text" class="input_base"></li>
+      <li><span>个税起征点：</span><input type="text" class="input_base"></li>
+      <li><span>外籍：</span><input type="radio" id="domestic" name="nationality"  checked="checked" align="absmiddle"></li>
+     </ul>
+     </div>
+     <!--缴费基数结束-->
+    </div>
+    <!--社保和公积金结束-->
+   </div>
+  </div>
+  <!--个税税率、计算方法、申报-->
+  <div class="tax">
+   <!--个人所得税税率表-->
+   <ul>
+    <h2>个人所得税税率表</h2>
+    <li>
+     <div class="figure figure-img"> <a href="#" target="_blank" > <img src="http://i3.mifile.cn/a4/aa6b038a-2946-4549-acff-17c58e701556" width="296" height="220" alt="小米插线板"> </a> </div>
+     <p class="title"> 个人所得税税率表 </p>
+     <p class="review">东西真心不错，用过最好用的插线板，做工外观没得挑剔，3个USB接口很实用，充电快，建议不包邮的应该在...</p>
+     <p class="more"><a href="#"> Read more</a></p>
+    </li>
+   </ul>
+   <!--个人所得税计算方法-->
+   <ul class="computation">
+    <h2>个人所得税计算方法</h2>
+    <li>
+     <div class="figure figure-img"> <a href="#" target="_blank" > <img src="http://i3.mifile.cn/a4/aa6b038a-2946-4549-acff-17c58e701556" width="296" height="220" alt="小米插线板"> </a> </div>
+     <p class="title"> 个人所得税税率表 </p>
+     <p class="review">东西真心不错，用过最好用的插线板，做工外观没得挑剔，3个USB接口很实用，充电快，建议不包邮的应该在...</p>
+     <p class="more"><a href="#"> Read more</a></p>
+    </li>
+   </ul>
+   <!--个人所得税申报-->
+   <ul>
+    <h2>个人所得税申报</h2>
+    <li>
+     <div class="figure figure-img"> <a href="#" target="_blank" > <img src="http://i3.mifile.cn/a4/aa6b038a-2946-4549-acff-17c58e701556" width="296" height="220" alt="小米插线板"> </a> </div>
+     <p class="title"> 个人所得税税率表 </p>
+     <p class="review">东西真心不错，用过最好用的插线板，做工外观没得挑剔，3个USB接口很实用，充电快，建议不包邮的应该在...</p>
+     <p class="more"><a href="#"> Read more</a></p>
+    </li>
+   </ul>
+
+  </div>
+   <!--清除浮动-->
+   <div class="clear"></div>
+
+
+  </div>
+  </div>
+
+
+  <!--个税知识-->
+  <div class="center">
+   <div class="knowledge">
+     <h2 class="knowledge_title">个人所得税知识</h2>
+      <ul class="knowledge_row">
+       <li>提前退休的个人所得税怎么计算</li>
+       <li>提前退休的个人所得税怎么计算</li>
+       <li>提前退休的个人所得税怎么计算</li>
+       <li>提前退休的个人所得税怎么计算</li>
+      </ul>
+   </div>
+  </div>
+  <!--中间部分结束-->
+
+
+  <!--底部-->
+  <div class="foot">
+   <div class="center">
+
+
+    <dl class="about">
+     <dt>关于我们</dt>
+
+     <dd>小黄人个税计算器是小黄人个税计算小黄人个税计算器是小黄人个税计算器是税计算器是...<a rel="nofollow" href="#">more</a></dd>
+
+    </dl>
+
+    <dl class="about links ">
+     <dt>友情链接</dt>
+
+     <dd><a rel="nofollow" href="#">个人所得税</a></dd>
+
+     <dd><a rel="nofollow" href="#">个人所得税</a></dd>
+
+     <dd><a rel="nofollow" href="#">个人所得税</a></dd>
+     <dd><a rel="nofollow" href="#">个人所得税</a></dd>
+
+     <dd><a rel="nofollow" href="#">个人所得税</a></dd>
+
+     <dd><a rel="nofollow" href="#">个人所得税</a></dd>
+
+    </dl>
+
+    <dl class="about ">
+     <dt>版权信息</dt>
+
+     <dd>版权所有：2017个税计算器</dd>
+
+    </dl>
+
+
+   </div>
+
+   </div>
+ </body>
+</html>

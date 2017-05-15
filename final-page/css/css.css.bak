@@ -1,0 +1,13 @@
+/* 全局变量 */
+body {
+    font: 14px/1.5 "Microsoft Yahei";
+    color: #333;
+    background-color: #fff;
+    min-width: 1000px;
+    margin: 0;
+}
+img{border:0px;}
+/* 顶部 */
+/* 中间全部 */
+.center{width:1000px;margin:0 auto;height:auto;}
+/* 头部 */

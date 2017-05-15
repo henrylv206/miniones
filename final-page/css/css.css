@@ -1,0 +1,99 @@
+/* 全局变量 */
+body {
+    font: 14px/1.5 "Microsoft Yahei";
+    color: #333;
+    background-color: #fff;
+    min-width: 1000px;
+    margin: 0;
+	display:block;
+}
+img{border:0px;}
+ul{margin: 0;padding: 0;}
+ul li{list-style-type:none;}
+a { text-decoration:none; out-line: none;color:#f8c51e;}
+input,form,select{border:none;margin:0;padding:0;outline:none;}
+.clear{clear: both;}
+/* 顶部 */
+.topbar{height:49px;border-bottom: 1px #f8c51e solid;background-color: #2d2d2d;color:#fff;line-height: 49px;}
+/* 中间部分 */
+.center{width:1000px;margin:0 auto;height:auto;}
+/* 头部 */
+.header{height:100px;line-height: 100px;}
+.header_logo{background: url("../images/index_04.jpg")no-repeat; width: 150px;float: left;}
+.header_logo a{display: block;height: 100px;}
+.header_nav{float: left;width:800px;padding-left: 50px;}
+.header_nav ul{height:100px;}
+.header_nav ul li{float: left;padding-right:27px;}
+.header_nav ul li a{color:#333333; font-size:16px;}
+.header_nav ul li a:hover{color:#f8c51e;}
+/* 广告图 */
+.banner{height:150px;background: url("../images/index_05.jpg") no-repeat #f5f5f5;margin-bottom: 54px;}
+/* 搜索 */
+.search{float: right;margin:34px 60px 0 0;}
+.search-text{width:278px;height:45px;border:1px solid #e0e0e0;font-size:16px;float:left;}
+.search-button{width:52px;height:47px;border:1px solid #e0e0e0;border-left:none;float:left;background: url("../images/index_09.jpg") no-repeat center #fff;}
+.search-button:hover{background: url("../images/index_091.jpg") no-repeat center #f8c51e;}
+.search-hot-words{margin-top:15px;}
+.search-hot-words li{float: left;margin-right: 25px;color:#757575;}
+.search-hot-words li a{color:#757575;margin-left:10px;}
+/* 中间部分背景 */
+.all_center{background-color: #fcfcfc;padding:50px 0;}
+/* 个税计算器 */
+.calculator{}
+.box-hd{margin-bottom: 15px;}
+.box-hd h1{font-weight: normal;font-size: 22px;}
+.calculator_tax{height:750px;border-top:1px solid #f8c51e;font-size:16px;background-color: #ffffff;}
+/*2017版个税计算器*/
+.calculator_personal{width:410px;margin:20px 0 20px 30px;border-right:1px dashed #e0e0e0;height:710px;float:left;}
+.calculator_personal h3{text-align: center;font-weight: normal;font-size: 20px;height:60px;}
+.calculator_personal ul li{line-height:60px;clear: both;}
+.calculator_personal ul li span{float: left;}
+.calculator_personal ul li form{width: 253px;float:left;margin-right: 48px;border:1px solid #c0c0c0;height:35px;line-height:35px;padding-left: 5px;    margin-top: 10px;}
+.selectclass{margin-top: 0;}
+.calculator_text{margin-left: 16px;}
+.input_money{width:220px;height: 30px;font-size: 16px;}
+#money{color:#999999;float: right;margin-right: 3px;}
+.button_Calculation{width:100px;height:40px;line-height:40px;background-color:#83c44e;float:left;color:#ffffff;font-size: 18px;text-align: center;font-weight: 550;margin:60px 30px 60px 0px;}
+.calculator_personal p{margin-top: 160px;text-align: center;color: #b0b0b0;}
+.calculator_personal p span{margin-left: 50px;}
+/*社保和公积金*/
+.Social_security{width:509px;float:left;height:710px;padding-left: 30px;line-height: 60px;}
+.Social_security h3{text-align: center;font-weight: normal;font-size: 20px;}
+/*个人公司缴费*/
+.payment{float: left;width: 220px;height: 470px;margin-right: 30px;}
+.payment li{clear: both;}
+.payment li span{float: left;}
+.payment li form{width: 40px;height: 30px;line-height: 30px;border: 1px solid #c0c0c0;float: left;margin:12px 8px 0 8px;}
+.input_payment{ width: 80px;float: right;}
+.input_percent{width: 20px;height:25px;font-size: 16px;}
+.fund{margin-top: 120px;}
+/*缴费基数*/
+.payment_base{height:160px;}
+.payment_base h4{margin: 10px auto 0 auto;font-weight: normal;}
+.payment_base ul{height: 100px;}
+.payment_base ul li{float: left;width:auto;height:40px;margin-right:50px;}
+.payment_text{margin-left: 32px;}
+.input_base{width: 60px;height: 30px;line-height: 30px;font-size: 16px;border: 1px solid #c0c0c0;}
+/*个税税率、计算方法、申报*/
+.tax{margin-top: 50px;}
+.tax ul{width:298px;height:470px;float: left;}
+.tax ul h2{font-size:20px;font-weight: normal;}
+.tax ul li{background-color: #ffffff;}
+.tax ul li:hover{z-index: 2; box-shadow: 0 15px 30px rgba(0,0,0,0.1); transform: translate3d(0, -2px, 0);}
+.computation{margin: 0 53px;}
+.title{text-align: center;}
+.review{margin:22px 28px;text-indent: 2em;}
+.more{text-align: center;padding-bottom: 10px;}
+/*个税知识*/
+.knowledge{height:65px;padding:50px 50px;}
+.knowledge_title{width: 200px;display: block;float: left;font-weight: normal;font-size: 20px;}
+.knowledge_row{width:660px;margin-left: 40px;  float: left;}
+.knowledge_row li{float:left;margin-right: 80px; line-height: 35px;list-style-type: disc;width: 200px;}
+/*底部*/
+.foot{background-color: #2d2d2d;border-top: 10px solid #f8c51e;height: 230px;color:#ffffff;}
+.about{float:left;width: 300px;}
+.about dt{background: url("../images/index_03.jpg") no-repeat bottom;height: 35px;line-height:35px;margin-bottom: 15px;width: 270px;}
+.about dd{line-height:22px;margin:10px 10px;width: 250px;text-indent: 2em;}
+.links{margin-left: 40px; margin-right: 48px;}
+.links dd{float: left;width: 100px;background: url("../images/index_06.jpg") no-repeat left;margin-right: 20px;}
+.links dd a{  color: #ffffff;}
